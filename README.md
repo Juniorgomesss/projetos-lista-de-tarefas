@@ -38,14 +38,19 @@ Durante o desenvolvimento deste projeto, pude aprimorar meus conhecimentos em:
 * **LocalStorage:** Entendimento de como salvar strings JSON no navegador para manter os dados salvos entre sessões.
 * **UX (User Experience):** Feedback visual para o usuário e validações de input (não permitir tarefas vazias).
 
+##//////ATUALIZAÇÕES////////
+
+- Mudança na estrutura de dados: array de strings para array de objetos para suportar status (concluída/pendente).
+- UI Update: Substituição de botões de texto por ícones (FontAwesome) para um visual mais limpo.
+- UI Update: Alteração da tipografia para 'Poppins' (Google Fonts).
+- Fix: Correção de alinhamento dos itens da lista utilizando Flexbox.
+- Feature: Adicionada funcionalidade de riscar tarefa (toggle) ao clicar no texto.
+
 ## 📝Próximos passos
 
 Melhorar a UI/UX para melhor uso com as seguintes mudanças:
 
-1. Trocar Botões de Texto por Ícones
-2. Tipografia (Fontes) Profissional
-3. Efeito de "Tarefa Concluída" (Check)
-4. Suavizar as Animações (Motion UI)
+1. Suavizar as Animações (Motion UI)
 
 ## 🔗 Autor
 
