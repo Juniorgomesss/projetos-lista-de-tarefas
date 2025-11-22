@@ -38,7 +38,7 @@ Durante o desenvolvimento deste projeto, pude aprimorar meus conhecimentos em:
 * **LocalStorage:** Entendimento de como salvar strings JSON no navegador para manter os dados salvos entre sessões.
 * **UX (User Experience):** Feedback visual para o usuário e validações de input (não permitir tarefas vazias).
 
-##//////ATUALIZAÇÕES////////
+##  ATUALIZAÇÕES /////////////////////////
 
 - Mudança na estrutura de dados: array de strings para array de objetos para suportar status (concluída/pendente).
 - UI Update: Substituição de botões de texto por ícones (FontAwesome) para um visual mais limpo.
