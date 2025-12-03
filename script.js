@@ -15,7 +15,7 @@ function adicionarTarefa() {
     } else {
         mensagem.textContent = "Tarefa adicionada com sucesso!";
         
-        // MUDANÇA PRINCIPAL: Agora criamos um OBJETO
+        // MUDANÇA PRINCIPAL: Agora cria um OBJETO
         let novaTarefa = {
             texto: textoTarefa,
             concluida: false
@@ -29,15 +29,58 @@ function adicionarTarefa() {
     inputTarefa.value = "";
 }
 
+// Variável global para controlar o filtro atual (começa mostrando tudo)
+let filtroAtual = 'todas';
+
+function filtrar(novoFiltro) {
+    filtroAtual = novoFiltro; // Atualiza a variável
+    
+    // Atualiza visualmente os botões (troca a classe .ativo)
+    const botoes = document.querySelectorAll('.btn-filtro');
+    botoes.forEach(btn => {
+        // Se o texto do botão for igual ao filtro, ele fica ativo
+        btn.classList.remove('ativo');
+        if (btn.getAttribute('onclick').includes(novoFiltro)) {
+            btn.classList.add('ativo');
+        }
+    });
+
+    renderizarTarefas(); // Redesenha a lista com o novo filtro
+}
+
 function renderizarTarefas() {
     const listaTarefas = document.getElementById("listaTarefas");
     listaTarefas.innerHTML = "";
 
+    // 1. Estado Vazio (Se não tiver NENHUMA tarefa no total)
+    if (tarefas.length === 0) {
+        listaTarefas.innerHTML = `
+            <div class="estado-vazio">
+                <i class="fas fa-mug-hot"></i>
+                <p>Tudo limpo por aqui! Aproveite seu descanso.</p>
+            </div>
+        `;
+        atualizarVisibilidadeBotaoLimpar();
+        return;
+    }
+
+    // 2. Loop com Filtro
     for (let i = 0; i < tarefas.length; i++) {
-        let itemLista = document.createElement("li");
-        itemLista.className = "item-tarefa"; // Classe para alinhar tudo
         
-        // Texto da tarefa
+        // LÓGICA DE FILTRAGEM:
+        // Se o filtro for "pendentes" E a tarefa estiver concluída -> PULA (não desenha)
+        if (filtroAtual === 'pendentes' && tarefas[i].concluida === true) {
+            continue; 
+        }
+        // Se o filtro for "concluidas" E a tarefa NÃO estiver concluída -> PULA
+        if (filtroAtual === 'concluidas' && tarefas[i].concluida === false) {
+            continue;
+        }
+
+        // --- Daqui para baixo é o desenho normal da tarefa ---
+        let itemLista = document.createElement("li");
+        itemLista.className = "item-tarefa"; 
+        
         let spanTexto = document.createElement("span");
         spanTexto.textContent = tarefas[i].texto;
         spanTexto.className = "texto-tarefa";
@@ -48,19 +91,16 @@ function renderizarTarefas() {
 
         spanTexto.onclick = () => toggleConcluida(i);
 
-        // Div para agrupar os botões
         let divBotoes = document.createElement("div");
 
-        // Botão Remover (Agora com Ícone de Lixeira)
         let botaoRemover = document.createElement("button");
         botaoRemover.className = "remover";
-        botaoRemover.innerHTML = '<i class="fas fa-trash"></i>'; // <--- MUDANÇA AQUI
+        botaoRemover.innerHTML = '<i class="fas fa-trash"></i>';
         botaoRemover.onclick = () => removerTarefa(i);
 
-        // Botão Editar (Agora com Ícone de Lápis)
         let botaoEditar =  document.createElement("button");
         botaoEditar.className = "editar";
-        botaoEditar.innerHTML = '<i class="fas fa-pen"></i>'; // <--- MUDANÇA AQUI
+        botaoEditar.innerHTML = '<i class="fas fa-pen"></i>';
         botaoEditar.onclick = () => editarTarefa(i);
 
         divBotoes.appendChild(botaoRemover);
