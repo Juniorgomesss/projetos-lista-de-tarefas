@@ -46,11 +46,12 @@ Durante o desenvolvimento deste projeto, pude aprimorar meus conhecimentos em:
 - Fix: Correção de alinhamento dos itens da lista utilizando Flexbox.
 - Feature: Adicionada funcionalidade de riscar tarefa (toggle) ao clicar no texto.
 
-## 📝Próximos passos
+##  ATUALIZAÇÕES 03/12/2025  ////////////////
 
-Melhorar a UI/UX para melhor uso com as seguintes mudanças:
-
-1. Suavizar as Animações (Motion UI)
+- Feature: Sistema de filtragem de tarefas (Todas/Pendentes/Concluídas).
+- UI/UX: Adicionado "Empty State" (Estado Vazio) com feedback visual quando a lista está limpa.
+- Motion UI: Implementação de animações Keyframes (SlideIn e FadeIn) para entrada de tarefas e transições suaves.
+- Logic: Refatoração da função de renderização para suportar condicionais de filtro.
 
 ## 🔗 Autor
 
