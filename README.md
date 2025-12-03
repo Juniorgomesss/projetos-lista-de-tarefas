@@ -49,6 +49,9 @@ Durante o desenvolvimento deste projeto, pude aprimorar meus conhecimentos em:
 
 ##  ATUALIZAÇÕES 03/12/2025  ////////////////
 
+![Lista-de-Tarefas-e-mais-2-páginas-Pessoal-—-Microsoft_-Edge-2025-12-03-20-06-40](https://github.com/user-attachments/assets/50d24094-8ea5-4e62-b427-a1477a29230b)
+
+
 - Feature: Sistema de filtragem de tarefas (Todas/Pendentes/Concluídas).
 - UI/UX: Adicionado "Empty State" (Estado Vazio) com feedback visual quando a lista está limpa.
 - Motion UI: Implementação de animações Keyframes (SlideIn e FadeIn) para entrada de tarefas e transições suaves.
