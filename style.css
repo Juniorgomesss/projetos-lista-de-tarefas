@@ -146,6 +146,7 @@ ul {
     display: flex;
     gap: 5px; /* Espacinho entre os botões */
     flex-shrink: 0; /* Impede os botões de amassarem */
+    animation: slideIn 0.4s ease-out forwards;
 }
 
 .hidden {
@@ -154,4 +155,78 @@ ul {
 
 button, input {
     font-family: 'Poppins', sans-serif;
+}
+
+/* --- ESTADO VAZIO --- */
+.estado-vazio {
+    text-align: center;
+    padding: 40px 20px;
+    opacity: 0.8;
+    animation: fadeIn 0.6s ease-in forwards;
+}
+
+.estado-vazio i {
+    font-size: 3em;  /* Ícone grande */
+    color: #798252; /* Verde da sua paleta */
+    margin-bottom: 15px;
+    display: block;
+}
+
+.estado-vazio p {
+    color: #331F19;
+    font-weight: 500;
+}
+
+/* --- FILTROS --- */
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn-filtro {
+    background-color: transparent;
+    border: 2px solid #8B7D70;
+    color: #331F19;
+    padding: 5px 15px;
+    width: auto; /* Sobrescreve a largura fixa dos ícones */
+    height: auto;
+    border-radius: 20px; /* Borda arredondada estilo "pill" */
+    font-size: 0.9em;
+}
+
+.btn-filtro:hover {
+    background-color: #e4dccc;
+}
+
+/* Estilo para o filtro que está selecionado */
+.btn-filtro.ativo {
+    background-color: #331F19;
+    color: #F4F0EA;
+    border-color: #331F19;
+}
+
+/* --- ANIMAÇÕES (MOTION UI) --- */
+
+/* Cria o efeito de deslizar de cima para baixo */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Cria o efeito de aparecer suavemente (para a xícara) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.8; /* Vai até a opacidade que definimos antes */
+    }
 }
