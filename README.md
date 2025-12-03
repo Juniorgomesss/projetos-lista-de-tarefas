@@ -26,7 +26,8 @@ A aplicação conta com um design responsivo e uma paleta de cores agradável pa
 * **JavaScript:** Lógica de interação, manipulação do DOM e LocalStorage.
 
 ## 📸 Screenshots
-<img width="956" height="956" alt="image" src="https://github.com/user-attachments/assets/569b07f6-11c9-4823-9397-27155087cbfe" />
+<img width="677" height="664" alt="image" src="https://github.com/user-attachments/assets/1a3bd2cc-bc2e-4e60-8706-1d0dcf6d2cfa" />
+
 
 
 ## 🧠 Aprendizados
