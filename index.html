@@ -22,6 +22,12 @@
       <button onclick="limparLista()" class="botao_lista hidden">Limpar tudo</button>
     </div>
 
+    <div class="filtros">
+      <button class="btn-filtro ativo" onclick="filtrar('todas')">Todas</button>
+      <button class="btn-filtro" onclick="filtrar('pendentes')">Pendentes</button>
+      <button class="btn-filtro" onclick="filtrar('concluidas')">Concluídas</button>
+    </div>
+
     <p id="mensagem"></p>
     
     <ul id="listaTarefas"></ul>
